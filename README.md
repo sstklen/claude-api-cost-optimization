@@ -1,6 +1,12 @@
 # 💰 Claude API Cost Optimization Skill
 
-> Save 50-90% on Claude API costs with three officially verified techniques
+[![GitHub stars](https://img.shields.io/github/stars/sstklen/claude-api-cost-optimization?style=social)](https://github.com/sstklen/claude-api-cost-optimization)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
+> 💰 Save 50-90% on Claude API costs with three officially verified techniques
+
 
 ![Claude API Cost Optimization Preview](assets/preview.png)
 
