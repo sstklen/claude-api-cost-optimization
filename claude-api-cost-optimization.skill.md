@@ -228,6 +228,23 @@ Is it complex reasoning?
 
 ---
 
+## 🎯 Real World Case Study
+
+### GAIA Animal Recognition System (v4.8.2)
+
+Battle-tested with 294 animal videos:
+
+| Technique | Expected | Actual | Why Different? |
+|-----------|----------|--------|----------------|
+| Prompt Caching | -90% | **-14%** | Images = 85% of tokens (uncacheable) |
+| Batch API | -50% | **-50%** | ✅ As expected |
+| Cache + Batch | -95% | **-57%** | ✅ Compound savings |
+
+**💡 Lesson**: For image/video workloads, expect ~14% from caching (not 90%).
+The 90% only applies to the system prompt portion.
+
+---
+
 ## Official Docs
 
 - [Prompt Caching](https://platform.claude.com/docs/en/docs/build-with-claude/prompt-caching)

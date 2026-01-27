@@ -66,6 +66,44 @@ response = client.messages.create(
 )
 ```
 
+### 🎯 Real World Case Study: GAIA v4.8.2
+
+We battle-tested all techniques in **GAIA** (Global AI Intelligence for Animals) — our animal recognition system processing 294 videos.
+
+#### Results
+
+| Technique | Expected Savings | Actual Savings | Status |
+|-----------|-----------------|----------------|--------|
+| Prompt Caching | -90% | **-14%** | ✅ Working |
+| Batch API | -50% | **-50%** | ✅ Working |
+| Cache + Batch | -95% | **-57%** | ✅ Working |
+
+#### Cost Breakdown (294 videos)
+
+| Mode | Per Video | Total | Savings |
+|------|-----------|-------|---------|
+| Original | $0.038 | $11.14 | — |
+| + Caching | $0.033 | $9.62 | 14% |
+| + Batch | $0.019 | $5.57 | 50% |
+| **+ Both** | **$0.016** | **$4.79** | **57%** 🔥 |
+
+#### 💡 Key Insight: Image-Heavy Workloads
+
+> **Why only 14% savings from caching instead of 90%?**
+>
+> In image recognition tasks, **images account for ~85% of input tokens**.
+> Only the system prompt (~15%) can be cached.
+>
+> ```
+> Input Composition:
+> ├── System Prompt: ~15% → ✅ Cacheable (saves 90%)
+> └── Image Data:    ~85% → ❌ Cannot cache
+>
+> Overall Savings: 15% × 90% = ~14%
+> ```
+
+This is **not documented** in the official Anthropic docs — we learned it the hard way!
+
 ### Installation
 
 ```bash
