@@ -2,6 +2,8 @@
 
 > Save 50-90% on Claude API costs with three officially verified techniques
 
+![Claude API Cost Optimization Preview](assets/preview.png)
+
 [English](#english) | [日本語](#日本語) | [中文](#中文) | [📖 背景故事 / Story](STORY.md)
 
 ---
@@ -153,6 +155,8 @@ cp claude-api-cost-optimization.skill.md ~/.claude/skills/
 
 ```
 ├── README.md                              # This file
+├── STORY.md                               # The backstory
+├── assets/preview.png                     # Preview image
 └── claude-api-cost-optimization.skill.md  # The skill (copy this!)
 ```
 
@@ -169,6 +173,6 @@ cp claude-api-cost-optimization.skill.md ~/.claude/skills/
 
 ## 🐾 Credits
 
-Made with 💰 by [Washin Village](https://github.com/sstklen) — Home of 28 cats & dogs in Japan's Boso Peninsula.
+Made with 💰 by [Washin Village](https://washinmura.jp) — Home of 28 cats & dogs in Japan's Boso Peninsula.
 
 *Save money, make more content!*
