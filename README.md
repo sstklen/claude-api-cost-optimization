@@ -195,13 +195,50 @@ cp claude-api-cost-optimization.skill.md ~/.claude/skills/
 
 ---
 
-## 📁 Files
+## 📁 Repository Structure
 
 ```
 ├── README.md                              # This file
 ├── STORY.md                               # The backstory
-├── assets/preview.png                     # Preview image
-└── claude-api-cost-optimization.skill.md  # The skill (copy this!)
+├── claude-api-cost-optimization.skill.md  # The skill (copy this!)
+│
+├── 📊 examples/                           # Real-world evidence
+│   ├── GAIA-savings-report.md             # Detailed GAIA v4.8.2 analysis
+│   └── real-batch-results.md              # Actual Batch API results (with cache hits!)
+│
+├── 🔧 scripts/                            # Ready-to-use Python scripts
+│   ├── batch_example.py                   # Batch API demo
+│   ├── cache_example.py                   # Prompt Caching demo
+│   └── calculate_savings.py               # CLI savings calculator
+│
+├── 📚 references/                         # Quick reference guides
+│   ├── batch-api.md                       # Batch API cheatsheet
+│   ├── prompt-caching.md                  # Caching cheatsheet
+│   └── extended-thinking.md               # Extended Thinking cheatsheet
+│
+└── assets/preview.png                     # Preview image
+```
+
+### 📊 Real Evidence
+
+We provide **actual API usage data** to back up our savings claims:
+
+| Evidence | Source | Key Finding |
+|----------|--------|-------------|
+| [GAIA Savings Report](examples/GAIA-savings-report.md) | 294 video processing | 57% combined savings |
+| [Batch Results](examples/real-batch-results.md) | Real API response | 50.2% savings with cache hits |
+
+### 🔧 Try It Yourself
+
+```bash
+# Calculate your potential savings
+python scripts/calculate_savings.py --input 10000 --output 5000 --system 2000 --requests 100
+
+# Run batch API example
+python scripts/batch_example.py
+
+# Run caching example
+python scripts/cache_example.py
 ```
 
 ---
