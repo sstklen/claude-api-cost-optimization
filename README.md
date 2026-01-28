@@ -45,14 +45,30 @@ python scripts/calculate_savings.py --input 10000 --output 5000 --requests 100
 | Cache read | 416,988 | $0.06 |
 | Output | 611,412 | $4.59 |
 
-### ⚡ Surprising Discovery: Batch Size Doesn't Matter!
+### 🔥 Surprising Discovery: Bigger = Faster AND Cheaper!
 
-| Batch | Requests | Created | Completed |
-|-------|----------|---------|-----------|
-| 🐁 Small | 10 | 11:50 AM | ⏳ Still processing |
-| 🐘 Large | 294 | 10:22 AM | ✅ **Finished first!** |
+| Batch | Requests | Sent | Done | Per Request |
+|-------|----------|------|------|-------------|
+| 🐘 Large | 294 | 10:22 | 12:35 | **0.45 min** |
+| 🐰 Small | 10 | 11:50 | 13:28 | 9.84 min |
+| 🐁 Test | 3 | 01:20 | 02:23 | 20.77 min |
 
-**The large batch completed ~1.5 hours BEFORE the small batch!**
+**Key findings:**
+- ✅ Large batch finished **53 minutes before** small batch (even though sent 1.5h earlier)
+- ✅ Large batch is **22x more efficient** per request!
+- ✅ Anthropic does NOT process in order (FIFO) — bigger batches get priority
+
+### 💡 Why? (Simple Explanation)
+
+```
+Think of GPU like an oven:
+🔥 Preheat = 15 min (fixed cost)
+
+Large (294): Preheat → Bake all 294 → 0.45 min each ✅
+Small (10):  Preheat → Bake only 10 → 9.84 min each ❌
+
+The more you bake, the cheaper per item!
+```
 
 👉 **Full case study:** [examples/batch-294-videos-case-study.md](examples/batch-294-videos-case-study.md)
 
