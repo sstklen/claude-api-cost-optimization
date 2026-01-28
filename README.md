@@ -26,7 +26,18 @@ python scripts/calculate_savings.py --input 10000 --output 5000 --requests 100
 
 ## 📊 Proof: Real Billing Data
 
-**Source:** Anthropic Console CSV Export (2026-01-27)
+### Latest: 294 Video Batch Job (2026-01-28)
+
+| Item | Value |
+|------|-------|
+| Files Processed | 294 |
+| Original Cost | $11.17 |
+| **Batch Cost** | **$5.59** |
+| **💰 Savings** | **$5.59 (50%)** |
+
+👉 **Full case study:** [examples/batch-294-videos-case-study.md](examples/batch-294-videos-case-study.md)
+
+### Anthropic Console CSV Export (2026-01-27)
 
 | Usage Type | Input Tokens | Cache Read | Output | Savings Applied |
 |------------|--------------|------------|--------|-----------------|
