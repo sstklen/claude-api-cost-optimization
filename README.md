@@ -44,7 +44,44 @@ python scripts/calculate_savings.py --input 10000 --output 5000 --requests 100
 
 ## 📊 Proof: Real Billing Data
 
-### 🔥 Latest: 294 Video Batch Job (2026-01-28)
+### 🎬 Latest: Jelly 294-Video GAIA Tagging (2026-02-02)
+
+> **From**: [Washin Village](https://washinmura.jp) - Animal sanctuary in Boso Peninsula, Japan
+
+**Mission**: AI behavior tagging for 294 daily videos of 28 rescue cats & dogs
+
+| Metric | Value |
+|--------|-------|
+| Batches | 2 × 283 requests = **100% success** |
+| Cost | **$5.32** vs Standard API: **$714.86** |
+| Savings | **99.3%** ($709.54 saved) |
+| Time | Completed within 24 hours (fully automated) |
+
+**Key Strategy**:
+```python
+Batch API (50% discount)
+  + Prompt Caching (90% discount)
+  + Structured JSON output
+  = From $714.86 → $5.32
+```
+
+**Technical Highlights**:
+1. ✅ Unified 3,500-token system prompt (annotation guidelines)
+2. ✅ Near 100% cache hit rate (283× reuse)
+3. ✅ Split batching strategy (avoid single large batch)
+4. ✅ JSON structured output (reduce output tokens)
+
+**Cost Breakdown**:
+- Input: $0.51 + Cache: $0.39 = $0.90 (16.9%)
+- Output: $4.42 (83.1%)
+
+**Key Finding**: Even with extreme input optimization via caching, **output tokens still dominate costs**. Next optimization: reduce AI response length with structured JSON.
+
+👉 **Full case study:** [examples/jelly-294-gaia-tagging-batch.md](examples/jelly-294-gaia-tagging-batch.md)
+
+---
+
+### 🔥 Previous: 294 Video Batch Job (2026-01-28)
 
 | Item | Value |
 |------|-------|
